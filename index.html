@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestie Vibes</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(180deg, #FFF1E1, #FFD6E0);
+    font-family: 'Merienda', sans-serif;
+    text-align: center;
+}
+
+.container {
+    max-width: 400px;
+    padding: 20px;
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 24px;
+    color: #ff6699;
+    text-shadow: 2px 2px 10px rgba(255, 102, 153, 0.3);
+}
+
+p {
+    font-size: 16px;
+    color: #555;
+}
+
+.image-card {
+    position: relative;
+    margin: 20px auto;
+    width: 250px;
+    padding: 10px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.image-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.tag {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    background: rgba(255, 153, 204, 0.2);
+    color: #ff6699;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.btn {
+    background: linear-gradient(45deg, #FF6699, #FF3366);
+    border: none;
+    color: white;
+    font-size: 18px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 51, 102, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 51, 102, 0.4);
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hey Bestie, You're My Favorite Human!</h1>
+        <p>Because nobody else makes me smile like you do! ✨</p>
+        <div class="image-card">
+            <img src="https://i.ibb.co/rGjXzFD3/c6cfdc3815fff2b22e94123068f5b540.jpg" alt="Cute Bear">
+            <span class="tag">✨ bestie vibes ✨</span>
+        </div>
+        <button class="btn" onclick="window.location.href='card.html'">Let's Go! ♥</button>
+    </div>
+    <iframe src="music.html" style="display: none;" id="musicFrame"></iframe>
+</body>
+</html>

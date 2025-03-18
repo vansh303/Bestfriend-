@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Everlasting Love Story</title>
+    <style>
+        body {
+            background-color: #fce4ec;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            color: #e91e63;
+            margin-top: 50px;
+            font-size: 3em;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Hearts Rain */
+        .heart-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 30px;
+            opacity: 0.7;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            100% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+        }
+
+        .photo-card {
+            background: white;
+            border-radius: 10px;
+            margin: 20px;
+            padding: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-card:hover {
+            transform: scale(1.05);
+        }
+
+        .photo-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .photo-card p {
+            font-size: 1.3em;
+            color: #e91e63;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        /* More Sweet Memories Button */
+        .more-memories {
+            background: linear-gradient(45deg, #ff4081, #ff80ab, #e91e63);
+            color: white;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.5em;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin: 30px;
+            box-shadow: 0 5px 15px rgba(255, 64, 129, 0.5);
+            transition: all 0.3s ease;
+            position: relative;
+            animation: textPulse 1.5s infinite;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        @keyframes textPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .more-memories:hover {
+            background: linear-gradient(45deg, #e91e63, #ff4081, #ff80ab);
+            box-shadow: 0 8px 20px rgba(233, 30, 99, 0.7);
+            transform: translateY(-3px);
+        }
+
+        .more-memories:active {
+            transform: translateY(2px) scale(0.98);
+        }
+
+        .more-memories::before {
+            content: "💖";
+            position: absolute;
+            left: -25px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5em;
+            animation: heartGlow 1.5s infinite;
+        }
+
+        .more-memories::after {
+            content: "💖";
+            position: absolute;
+            right: -25px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5em;
+            animation: heartGlow 1.5s infinite;
+        }
+
+        @keyframes heartGlow {
+            0% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+            100% { opacity: 0.6; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="heart-rain"></div>
+
+    <div class="container">
+        <h1>Our Love Story</h1>
+
+        <div class="photo-card">
+            <img src="https://i.ibb.co/KxBN3jXg/pic1.jpg" alt="Our first memory">
+            <p>The day we fell in love 💕</p>
+        </div>
+
+        <div class="photo-card">
+            <img src="https://i.ibb.co/LXSksnvj/pic2.jpg" alt="Kisses at sunset">
+            <p>Sunset kisses 😘</p>
+        </div>
+
+        <div class="photo-card">
+            <img src="https://i.ibb.co/KxpXhngf/pic3.jpg" alt="First dance">
+            <p>Our first dance 💃</p>
+        </div>
+
+        <div class="photo-card">
+            <img src="https://i.ibb.co/bgBzVJr8/pic4.jpg" alt="Forever Yours">
+            <p>Forever yours 💍</p>
+        </div>
+
+        <div class="photo-card">
+            <img src="https://i.ibb.co/pryBsrrk/pic5.jpg" alt="Hearts belong">
+            <p>My heart belongs to you ❤️</p>
+        </div>
+
+        <div class="photo-card">
+            <img src="https://i.ibb.co/j9hLpY9x/pic6.jpg" alt="Love to the moon">
+            <p>Love you to the moon 🌙</p>
+        </div>
+
+        <a href="page.html" class="more-memories">More Sweet Memories 💝💌</a>
+    </div>
+    <iframe src="music.html" style="display: none;" id="musicFrame"></iframe>
+
+    <script>
+        // Heart Rain Effect
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = ["❤️", "💝", "💖", "🩷", "🤍", "💜"][Math.floor(Math.random() * 6)];
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+            document.querySelector(".heart-rain").appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+        setInterval(createHeart, 200); // Fast Falling Hearts
+    </script>
+
+</body>
+</html>
